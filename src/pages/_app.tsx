@@ -3,6 +3,7 @@ import type { AppProps } from "next/app"
 import { useState } from "react"
 import { Hydrate, QueryClientProvider } from "react-query"
 import { ReactQueryDevtools } from "react-query/devtools"
+import "styles/globals.css"
 
 const App = ({ Component, pageProps }: AppProps) => {
   const [queryClient] = useState(getQueryClient)
