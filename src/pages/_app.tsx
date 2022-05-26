@@ -1,7 +1,7 @@
 import { getQueryClient } from "lib/client"
 import type { AppProps } from "next/app"
 import { useState } from "react"
-import { QueryClientProvider } from "react-query"
+import { Hydrate, QueryClientProvider } from "react-query"
 import { ReactQueryDevtools } from "react-query/devtools"
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -9,7 +9,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
+      <Hydrate state={pageProps.dehydratedState}>
+        <Component {...pageProps} />
+      </Hydrate>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )
