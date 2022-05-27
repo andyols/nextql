@@ -1,7 +1,7 @@
 import { GraphQLClient } from "graphql-request"
 import { QueryClient } from "react-query"
 
-const url = "https://graphqlpokemon.favware.tech/"
+const url = "https://nextql-server.vercel.app/api/graphql"
 
 export const getQueryClient = () =>
   new QueryClient({

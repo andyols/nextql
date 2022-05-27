@@ -1,21 +1,27 @@
-import { PokemonEnum, usePokemonQuery } from "graphql/generated"
+import { usePostsQuery } from "graphql/generated"
 import { getRequestClient } from "lib/client"
 import type { NextPage } from "next"
 import Link from "next/link"
 
-const variables = { pokemon: PokemonEnum["Dragonite"] }
-
 const Home: NextPage = () => {
-  const { data, isLoading } = usePokemonQuery(getRequestClient(), variables)
+  const { data, isLoading } = usePostsQuery(getRequestClient())
 
   return (
-    <div className="w-screen h-screen flex justify-center">
-      <div className="pt-16 max-w-3xl w-full font-mono">
+    <div className="flex justify-center w-screen h-screen">
+      <div className="w-full max-w-3xl pt-16 font-mono">
         <Link href={"/ssr"}>
           <a className="hover:underline hover:cursor-pointer">ssr page</a>
         </Link>
-        <h2 className="text-3xl">{variables.pokemon}</h2>
-        <p>{isLoading ? "loading..." : JSON.stringify(data?.getPokemon)}</p>
+        <div className="flex flex-col pt-4">
+          {isLoading && <p>loading...</p>}
+          {data?.posts &&
+            data.posts.map(post => (
+              <div key={post.id} className="flex flex-col pb-4">
+                <p>{post.title}</p>
+                <p>{post.content}</p>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   )

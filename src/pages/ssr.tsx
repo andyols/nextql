@@ -1,21 +1,29 @@
-import { PokemonEnum, usePokemonQuery } from "graphql/generated"
+import { usePostsQuery } from "graphql/generated"
 import { getQueryClient, getRequestClient } from "lib/client"
 import type { GetServerSideProps, NextPage } from "next"
 import Link from "next/link"
 import { dehydrate } from "react-query"
 
-const variables = { pokemon: PokemonEnum["Pikachu"] }
-
 const HomeSSR: NextPage = () => {
-  const { data, isLoading } = usePokemonQuery(getRequestClient(), variables)
+  const { data, isLoading, isError, error } = usePostsQuery(getRequestClient())
+
   return (
-    <div className="w-screen h-screen flex justify-center">
-      <div className="pt-16 max-w-3xl w-full font-mono">
+    <div className="flex justify-center w-screen h-screen">
+      <div className="w-full max-w-3xl pt-16 font-mono">
         <Link href={"/"}>
           <a className="hover:underline hover:cursor-pointer">back</a>
         </Link>
-        <h2 className="text-3xl">{variables.pokemon}</h2>
-        <p>{isLoading ? "loading..." : JSON.stringify(data?.getPokemon)}</p>
+        <div className="flex flex-col pt-4">
+          {isLoading && <p>loading...</p>}
+          {data?.posts &&
+            data.posts.map(post => (
+              <div key={post.id} className="flex flex-col pb-4">
+                <p>{post.title}</p>
+                <p>{post.content}</p>
+              </div>
+            ))}
+        </div>
+        {isError && <p>{JSON.stringify(error)}</p>}
       </div>
     </div>
   )
@@ -25,8 +33,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const client = getQueryClient()
 
   await client.prefetchQuery(
-    usePokemonQuery.getKey(variables),
-    usePokemonQuery.fetcher(getRequestClient(), variables)
+    usePostsQuery.getKey(),
+    usePostsQuery.fetcher(getRequestClient())
   )
 
   return {
