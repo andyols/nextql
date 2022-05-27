@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "gen": "pnpm graphql-codegen --config .graphqlrc.yml",
-    "deploy": "pnpm generate && pnpm build"
+    "deploy": "pnpm gen && pnpm build"
   },
   "dependencies": {
     "graphql": "^16.5.0",
