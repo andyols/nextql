@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "dotenv": "DOTENV_CONFIG_PATH=./.env.local",
-    "gen": "pnpm dotenv graphql-codegen --config .graphqlrc.yml -r dotenv/config",
+    "gen": "graphql-codegen --config .graphqlrc.yml -r dotenv/config",
+    "gen:local": "DOTENV_CONFIG_PATH=./.env.local pnpm gen",
     "deploy": "pnpm gen && pnpm build"
   },
   "dependencies": {
