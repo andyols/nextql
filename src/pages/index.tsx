@@ -1,4 +1,4 @@
-import { usePostsQuery } from "graphql/generated"
+import { Stage, usePostsQuery } from "graphql/generated"
 import { getRequestClient } from "lib/client"
 import type { NextPage } from "next"
 import Link from "next/link"
@@ -14,13 +14,15 @@ const Home: NextPage = () => {
         </Link>
         <div className="flex flex-col pt-4">
           {isLoading && <p>loading...</p>}
-          {data?.posts &&
-            data.posts.map(post => (
-              <div key={post.id} className="flex flex-col pb-4">
-                <p>{post.title}</p>
-                <p>{post.content}</p>
-              </div>
-            ))}
+          {data?.posts.map(
+            post =>
+              post.stage === Stage["Published"] && (
+                <div key={post.id} className="flex flex-col pb-4">
+                  <p>{post.title}</p>
+                  <p>{post.content}</p>
+                </div>
+              )
+          )}
         </div>
       </div>
     </div>

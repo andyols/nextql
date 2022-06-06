@@ -1,7 +1,7 @@
 import { GraphQLClient } from "graphql-request"
 import { QueryClient } from "react-query"
 
-const url = "https://nextql-server.vercel.app/api/graphql"
+const url = process.env.NEXT_PUBLIC_API_ENDPOINT
 
 export const getQueryClient = () =>
   new QueryClient({

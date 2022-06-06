@@ -9,6 +9,7 @@ specifiers:
   '@types/react': 18.0.9
   '@types/react-dom': 18.0.5
   autoprefixer: ^10.4.7
+  dotenv: ^16.0.1
   eslint: 8.16.0
   eslint-config-next: 12.1.6
   graphql: ^16.5.0
@@ -38,6 +39,7 @@ devDependencies:
   '@types/react': 18.0.9
   '@types/react-dom': 18.0.5
   autoprefixer: 10.4.7_postcss@8.4.5
+  dotenv: 16.0.1
   eslint: 8.16.0
   eslint-config-next: 12.1.6_k6khgwrcmlpd2kpaxkviqw2zii
   postcss: 8.4.5
@@ -3421,7 +3423,7 @@ packages:
     dev: true
 
   /isexe/2.0.0:
-    resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
+    resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
 
   /isomorphic-fetch/3.0.0:
