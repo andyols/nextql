@@ -1,0 +1,14 @@
+query Pokemon($pokemon: PokemonEnum!) {
+  getPokemon(pokemon: $pokemon) {
+    num
+    types
+    species
+    height
+    weight
+    sprite
+    flavorTexts {
+      game
+      flavor
+    }
+  }
+}

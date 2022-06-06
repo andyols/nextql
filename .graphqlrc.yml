@@ -1,5 +1,5 @@
 overwrite: true
-schema: ${API_ENDPOINT}
+schema: https://graphqlpokemon.favware.tech/
 documents: src/graphql/**/*.{graphql,gql}
 generates:
   src/graphql/generated/index.ts:

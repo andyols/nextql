@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen": "graphql-codegen --config .graphqlrc.yml -r dotenv/config",
-    "gen:local": "DOTENV_CONFIG_PATH=./.env.local pnpm gen",
+    "gen": "graphql-codegen --config .graphqlrc.yml",
     "deploy": "pnpm gen && pnpm build"
   },
   "dependencies": {
@@ -28,7 +27,6 @@
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.5",
     "autoprefixer": "^10.4.7",
-    "dotenv": "^16.0.1",
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6",
     "postcss": "^8.4.14",

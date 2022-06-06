@@ -9,7 +9,6 @@ specifiers:
   '@types/react': 18.0.9
   '@types/react-dom': 18.0.5
   autoprefixer: ^10.4.7
-  dotenv: ^16.0.1
   eslint: 8.16.0
   eslint-config-next: 12.1.6
   graphql: ^16.5.0
@@ -39,7 +38,6 @@ devDependencies:
   '@types/react': 18.0.9
   '@types/react-dom': 18.0.5
   autoprefixer: 10.4.7_postcss@8.4.5
-  dotenv: 16.0.1
   eslint: 8.16.0
   eslint-config-next: 12.1.6_k6khgwrcmlpd2kpaxkviqw2zii
   postcss: 8.4.5

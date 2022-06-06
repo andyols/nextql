@@ -1,7 +1,7 @@
 import { GraphQLClient } from "graphql-request"
 import { QueryClient } from "react-query"
 
-const url = process.env.NEXT_PUBLIC_API_ENDPOINT
+const url = "https://graphqlpokemon.favware.tech/"
 
 export const getQueryClient = () =>
   new QueryClient({
