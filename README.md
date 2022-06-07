@@ -26,7 +26,7 @@ To change to another api, alter the endpoint in the following locations:
 [`src/lib/client`](https://github.com/andyols/nextql/blob/7e4827464779a81deecd3e43cc6b5a87d99e25ea/src/lib/client.ts#L4)
 [`.graphqlrc.yml`](https://github.com/andyols/nextql/blob/7e4827464779a81deecd3e43cc6b5a87d99e25ea/.graphqlrc.yml#L2)
 
-Can also use an env variable but this requires extra configuration ([example](https://github.com/andyols/nextql/commit/1a2ab0bd91a0653d8fd868566a81ae492f5039f0#diff-7ae45ad102eab3b6d7e7896acd08c427a9b25b346470d7bc6507b6481575d519)\)
+Can also use an env variable but this requires extra configuration ([example](https://github.com/andyols/nextql/commit/1a2ab0bd91a0653d8fd868566a81ae492f5039f0)\)
 
 ### Vercel Deployment
 
