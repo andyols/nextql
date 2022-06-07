@@ -1,4 +1,4 @@
-import { Pokemon } from "components/Pokemon"
+import { Layout } from "components/Layout"
 import {
   PokemonEnum,
   PokemonQueryVariables,
@@ -6,22 +6,16 @@ import {
 } from "graphql/generated"
 import { getRequestClient } from "lib/client"
 import type { NextPage } from "next"
-import Link from "next/link"
 
 const variables: PokemonQueryVariables = { pokemon: PokemonEnum["Pikachu"] }
 
 const Home: NextPage = () => {
-  const { data, isLoading } = usePokemonQuery(getRequestClient(), variables)
+  const { data } = usePokemonQuery(getRequestClient(), variables)
 
   return (
-    <div className="container pt-16 mx-auto">
-      <Link href={"/ssr"}>
-        <a className="hover:underline hover:cursor-pointer font-semibold">
-          ssr page
-        </a>
-      </Link>
-      <Pokemon pokemon={data?.getPokemon} loading={isLoading} />
-    </div>
+    <Layout link="ssr">
+      <p className="w-1/2 font-mono">{JSON.stringify(data?.getPokemon)}</p>
+    </Layout>
   )
 }
 
