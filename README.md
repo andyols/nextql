@@ -46,7 +46,7 @@ Can also use an env variable but this requires extra configuration ([example](ht
 
 This template is ready for production via [Vercel for GitHub](https://vercel.com/docs/concepts/git/vercel-for-github).
 
-In order to use [`scripts/ignore-build-step.js`](https://github.com/andyols/nextql/blob/main/scripts/ignore-build-step.js) :
+In order to use [`scripts/ignore-build-step.js`](https://github.com/andyols/nextql/blob/main/scripts/ignore-build-step.js):
 
 - Vercel Project Settings -> Git -> Ignored Build Step -> Command
 
