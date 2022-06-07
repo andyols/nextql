@@ -3,9 +3,6 @@ query Pokemon($pokemon: PokemonEnum!) {
     num
     types
     species
-    height
-    weight
-    sprite
     flavorTexts {
       game
       flavor
