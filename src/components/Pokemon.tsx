@@ -18,14 +18,14 @@ export const Pokemon: React.FC<PokemonProps> = ({ pokemon, loading }) => {
             </p>
             <p>{`(${pokemon.num})`}</p>
             {pokemon.types.map((type, i, arr) => (
-              <div className="flex" key={i}>
+              <div key={i} className="flex">
                 {type}
                 {`${i < arr.length - 1 ? "," : ""}`}
               </div>
             ))}
           </div>
-          {pokemon.flavorTexts.map(text => (
-            <div className="flex flex-col space-y-2">
+          {pokemon.flavorTexts.map((text, i) => (
+            <div key={i} className="flex flex-col space-y-2">
               <p>{text.flavor}</p>
               <p className="self-end text-xs italic text-gray-500">- {text.game}</p>
             </div>
