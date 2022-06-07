@@ -17,7 +17,7 @@ _a minimal starter template for developing type-safe Next.js applications with G
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [GraphQL Code Generator](https://www.graphql-code-generator.com/)
-- [VSCode GraphQL](https://github.com/graphql/vscode-graphql)
+- [VSCode GraphQL](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql)
 
 🎨 Styling
 
